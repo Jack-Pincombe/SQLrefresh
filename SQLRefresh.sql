@@ -50,6 +50,30 @@ insert into roomDetails values
 ('A11', 'BA', 16),('C12', 'BC', 16),
 ('A9', 'BA', 12),('B28', 'BB', 16)
 
+SELECT * FROM roomDetails
+
 select * from roomDetails AS R
 INNER JOIN floorDetails AS F
 ON F.floor_letter = R.floor_number
+
+SELECT * 
+FROM floordetails AS F 
+	left outer JOIN roomdetails AS R
+    ON F.floor_letter = R.floor_detail
+    where R.floor_number is null
+    
+SELECT f.* FROM floordetails AS F
+left outer JOIN roomdetails AS R
+ON F.floor_letter = R.floor_number
+
+SELECT f.* FROM floordetails AS F
+right outer JOIN roomdetails AS R
+ON F.floor_letter = R.floor_number
+
+SELECT f.* FROM floordetails AS F
+left outer JOIN roomdetails AS R
+ON F.floor_letter = R.floor_number
+where R.floor_number is null
+    
+    
+    
