@@ -1,6 +1,6 @@
 use sys
 
-create table customer
+CREATE table customer
 (
 	CustNo int,
     Title nvarchar(6),
@@ -56,24 +56,64 @@ select * from roomDetails AS R
 INNER JOIN floorDetails AS F
 ON F.floor_letter = R.floor_number
 
+
+
 SELECT * 
 FROM floordetails AS F 
 	left outer JOIN roomdetails AS R
     ON F.floor_letter = R.floor_detail
     where R.floor_number is null
     
+    
+    
 SELECT f.* FROM floordetails AS F
 left outer JOIN roomdetails AS R
 ON F.floor_letter = R.floor_number
+
+
 
 SELECT f.* FROM floordetails AS F
 right outer JOIN roomdetails AS R
 ON F.floor_letter = R.floor_number
 
+
+
 SELECT f.* FROM floordetails AS F
 left outer JOIN roomdetails AS R
 ON F.floor_letter = R.floor_number
 where R.floor_number is null
-    
-    
-    
+
+CREATE table employees
+(
+	employee_ID nvarchar(4),
+	First_Name nvarchar(20),
+	Last_Name nvarchar(20),
+	Salary decimal(7.2),
+	primary key(employee_ID)
+)
+
+select * from employees 
+
+insert into employees values
+
+('SG5','Susan','Brand',24000.00,),
+('SG14','David','Ford',18000.00,),
+('SG37','Anne','Beech',12000.00,)
+
+select max(salary) 'Max Sal',min(Salary)
+from employees
+
+alter table employees
+add column department nvarchar(20)
+
+update employees 
+set department = 'D1'
+where employee_ID = 'SG5' or where employee_ID = 'SG37'
+
+
+select SUM(Salary) AS 'Dept Sal'
+from employees
+WHERE DEPARTMENT = 'D1'
+
+
+
